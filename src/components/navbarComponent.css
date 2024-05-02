@@ -1,0 +1,41 @@
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+.navbarComponent{
+    display: flex;
+    background-color: black;
+    justify-content: space-around;
+    padding: 1rem 2rem;
+}
+
+.navbarComponent__menu{
+    color: white;
+}
+
+.navbarComponent__item{
+    color: white;
+}
+
+.navbarComponent__itemContent{
+list-style: none;
+display: flex;
+}
+
+.navbarComponent__input{
+    height: 2rem;
+    width: 40%;
+}
+
+.navbarComponent__imgLogopro{
+    height: 3rem;
+}
+
+.navbarComponent__img{
+    height: 4rem;
+}
+
+.navbarComponent__itemContentsList{
+    margin-right: 1rem;
+}
