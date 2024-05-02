@@ -1,0 +1,15 @@
+.cards__content{
+    border: 1px solid #837b7b4d;
+    border-radius: 0.3rem;
+    display: flex;
+    align-items: center;
+}
+
+.cards{
+    margin-top: 2rem;
+    
+}
+
+.cards__content__img{
+    width: 20%;
+}

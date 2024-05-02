@@ -1,0 +1,19 @@
+
+
+.buttonComponent{
+    margin-top: 2rem;
+}
+
+.buttonComponent__content{
+    background: white;
+    border-radius: 0.5rem;
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+    border: 1px solid #837b7b4d;
+    font-weight: bold;
+}
+
+.buttonComponent__content:hover{
+    cursor: pointer;
+    background-color: rgba(214, 214, 214, 0.772);
+}

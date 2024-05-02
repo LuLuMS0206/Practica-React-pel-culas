@@ -26,14 +26,15 @@ display: flex;
 .navbarComponent__input{
     height: 2rem;
     width: 40%;
+    border: none;
 }
 
 .navbarComponent__imgLogopro{
-    height: 3rem;
+    height: 2rem;
 }
 
 .navbarComponent__img{
-    height: 4rem;
+    height: 3rem;
 }
 
 .navbarComponent__itemContentsList{
