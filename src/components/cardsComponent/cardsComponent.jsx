@@ -1,3 +1,5 @@
+/* eslint-disable no-const-assign */
+/* eslint-disable react/prop-types */
 // import './cardsComponent.css';
 
 // export const CardsComponent = () => {
@@ -21,8 +23,7 @@
 //     );
 // }
 
-
-
+import { CardComponent } from '../cardComponent/cardComponent';
 import './cardsComponent.css';
 
 const movieData = [
@@ -38,7 +39,7 @@ const movieData = [
         id:2,
         title: "Gru 4. Mi villano favorito",
         year: 2024,
-        genres: ["Animación", "Aventura", "Comedia"],
+        genres: ["Animación", "Aventura", "Comedia", "Infantil"],
         actors: ["Steve Carell", "Kristen Wiig", "Joey King", "Will Ferrell"],
         image: "src/assets/img/2552361.webp"
     },
@@ -46,7 +47,7 @@ const movieData = [
         id:3,
         title: "Del revés 2",
         year: 2024,
-        genres: ["Animación", "Aventura", "Comedia"],
+        genres: ["Animación", "Aventura", "Comedia", "Infantil"],
         actors: ["Amy Poehler", "Phyllis Smith", "Lewis Black", "Tony Hale"],
         image: "src/assets/img/3086368.jpg"
     },
@@ -62,7 +63,7 @@ const movieData = [
         id:5,
         title: "Vaiana 2",
         year: 2024,
-        genres: ["Animación", "Aventura", "Comedia"],
+        genres: ["Animación", "Aventura", "Comedia", "Infantil"],
         actors: ["Auli'i Cravalho", "Dwayne Johnson", "Alan Tudyk"],
         image: "src/assets/img/vaiana.jpg"
     },
@@ -70,7 +71,7 @@ const movieData = [
         id:6,
         title: "10 Lives",
         year: 2024,
-        genres: ["Animación", "Comedia", "Familiar"],
+        genres: ["Animación", "Comedia", "Familiar", "Infantil"],
         actors: ["Mo Gilligan", "Simone Ashley", "Sophie Okonedo"],
         image: "src/assets/img/10lives.jpg"
     },
@@ -94,7 +95,7 @@ const movieData = [
         id:9,
         title: "Capitán Avispa",
         year: 2024,
-        genres: ["Animación", "Acción", "Aventura"],
+        genres: ["Animación", "Acción", "Aventura", "Infantil"],
         actors: ["Luis Fonsi", "Joy Huerta", "Juanes"],
         image: "src/assets/img/Capitan avispa.jpg"
     },
@@ -109,21 +110,22 @@ const movieData = [
     
 ];
 
-export const CardsComponent = () => {
+
+export const CardsComponent = (props) => {
+    let newData = [];
+
+    if(props.genre !== '' ){
+        newData = movieData.filter(movie => movie.genres.includes(props.genre));
+    } else{
+        newData = movieData
+    }
+    
+
     return (
         <div>
             <div className='cards'>
-                {movieData.map(movie => (
-                    <div key={movie.id} className='cards__content'>
-                        <div>
-                            <img className='cards__content__img' src={movie.image} alt="" />
-                        </div>
-                        <div className='cards__content__text'>
-                            <h3>{movie.title} ({movie.year})</h3>
-                            <p>{movie.genres.join(", ")}</p>
-                            <p>{movie.actors.join(", ")}</p>
-                        </div>
-                    </div>
+                {newData.map((movie, index) => (
+                    <CardComponent title={movie.title} year={movie.year} genres={movie.genres} actors={movie.actors} image={movie.image} key={index}/>
                 ))}
             </div>
         </div>
