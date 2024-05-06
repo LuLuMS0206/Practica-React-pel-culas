@@ -6,7 +6,6 @@ import './buttonComponent.css';
 export const ButtonComponent = (props) => {
 
 
-
     return (
         <div className="buttonComponent">
             <button className='buttonComponent__content' onClick={props.clickHandlerTodos}>Películas</button>
